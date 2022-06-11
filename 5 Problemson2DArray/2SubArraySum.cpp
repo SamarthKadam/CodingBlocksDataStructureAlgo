@@ -1,4 +1,4 @@
-#include<iostream>
+ #include<iostream>
 using namespace std;
 int n;
 void cumalative(int arr[10][10])
@@ -44,6 +44,14 @@ int main()
 		}
 	}
 	cumalative(arr);
+	for(int i=0;i<n;i++)
+	{
+		for(int j=0;j<n;j++)
+		{
+			cout<<arr[i][j]<<" ";
+		}
+		cout<<endl;
+	}
 
 
 	for(int li=0;li<n;li++)
