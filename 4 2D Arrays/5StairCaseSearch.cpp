@@ -7,7 +7,7 @@ int StairSearch(int key)
 	int i=0;
 	int j=n-1;
 
-	while(j>=0)
+	while(j>=0&&i>=0)
 	{
 		if(arr[i][j]==key)
 		{
