@@ -76,3 +76,52 @@
 //     cout<<water<<endl;
 
 // }
+
+#include<iostream>
+using namespace std;
+int CountWater=0;
+void FindWaterStore(int arr[100],int n)
+{
+	int low=0;
+	int high=n-1;
+	int left=0;
+	int right=0;
+
+	while(low<=high)
+	{
+		if(arr[low]<arr[high])
+		{
+			if(arr[low]>left)
+			{
+				left=arr[low];
+			}
+			else{
+				CountWater+=left-arr[low];
+			}
+			low++;
+		}
+		else{
+			if(arr[high]>right)
+			{
+				right=arr[high];
+			}
+			else{
+				CountWater+=right-arr[high];
+			}
+			high--;
+		}
+	}
+
+}
+int main()
+{
+	int n;
+	int arr[100];
+	cin>>n;
+	for(int i=0;i<n;i++)
+	{
+		cin>>arr[i];
+	}
+	FindWaterStore(arr,n);
+	cout<<CountWater<<endl;
+}
