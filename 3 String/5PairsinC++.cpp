@@ -63,6 +63,14 @@ int main()
 
              ///////We can use the comparaters by putting them inside the bracket      
       cout<<(p1==p2)<<endl;
+
+
+      pair<pair<int,int>,string> car;
+      car.first.first=10;
+      car.first.second=20;
+      car.second="BMW";
+
+      cout<<car.second<<endl;
       
 
 
