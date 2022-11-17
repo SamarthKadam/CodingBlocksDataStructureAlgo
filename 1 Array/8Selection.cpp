@@ -15,7 +15,7 @@ void SelectionSort(int arr[100],int n)
 	for(i=0;i<n-1;i++)
 	{
 		index=i;
-		for(j=i;j<n;j++)
+		for(j=i+1;j<n;j++)
 		{
 			if(arr[index]>arr[j])
 			{

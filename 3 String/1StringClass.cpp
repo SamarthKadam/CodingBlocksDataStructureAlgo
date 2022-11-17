@@ -87,6 +87,7 @@ int main()
         cout<<c<<".";
      }
 
+
      ////auto means it will check for the value and get its datatype 
  
 }

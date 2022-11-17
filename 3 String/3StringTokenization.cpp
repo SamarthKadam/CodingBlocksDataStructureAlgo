@@ -1,9 +1,9 @@
 #include<iostream>
-#include<cstring> /////We have strtok inside it
+#include<cstring> /////We have strtok inside it //only works with char array
 using namespace std;
 int main()
 {
-	char arr[100]="Today is rainy day";
+	char arr[100]=" Today is rainy day ";
 	char *ptr=strtok(arr," ");
 	cout<<ptr<<endl;
 

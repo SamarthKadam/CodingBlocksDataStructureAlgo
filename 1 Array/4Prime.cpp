@@ -37,14 +37,14 @@
 #include<cmath>
 using namespace std;
 int n;
-int checkPrime(int x)
+int checkPrime()
 {
-	if(x<=1)
+	if(n<=1)
 	{
 		return 0;
 	}
 	int i;
-	int t=sqrt(x);
+	int t=sqrt(n);
 	for(i=2;i<=t;i++)
 	{
 		if(n%i==0)
@@ -60,15 +60,15 @@ int checkPrime(int x)
 int main()
 {
 	cin>>n;
-	if(checkPrime(n))
+	if(checkPrime())
 	{
 		cout<<"Your number is Prime"<<endl;
 	}
 	else{
-		cout<<"Yournumber is Not prime Number"<<endl;
+		cout<<"Your number is Not prime Number"<<endl;
 	}
 	return 0;
 }
 
-
+//Point to be noted normal function call defaulty returns 1;
 // Above is Slowest Approach then below is little slightly better approach

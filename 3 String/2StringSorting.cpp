@@ -2,7 +2,6 @@
 #include<algorithm>
 #include<string>
 using namespace std;
-
 bool compare(string s1,string s2)
 {
     if(s1.length()==s2.length())
@@ -26,6 +25,7 @@ int main()
     }
 
     sort(s,s+n,compare);
+    // sort(s,s+n);
 
     for(i=0;i<n;i++)
     {

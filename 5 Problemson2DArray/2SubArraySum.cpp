@@ -1,28 +1,28 @@
- #include<iostream>
+#include<iostream>
 using namespace std;
 int n;
-void cumalative(int arr[10][10])
+int sum;
+void Cumul(int arr[10][10],int n)
 {
-	
-	for(int i=0;i<n;i++)
+for(int i=0;i<n;i++)
+{
+	for(int j=1;j<n;j++)
 	{
-		for(int j=1;j<n;j++)
-		{
-			arr[i][j]=arr[i][j]+arr[i][j-1];
-		}
+		arr[i][j]+=arr[i][j-1];
 	}
 
-	for(int i=0;i<n;i++)
+}
+for(int i=0;i<n;i++)
 	{
 		for(int j=1;j<n;j++)
 		{
-			arr[j][i]=arr[j][i]+arr[j-1][i];
+			arr[j][i]+=arr[j-1][i];
 		}
-	}
+	}	
 }
 int valid(int x)
 {
-	if(x>=0 && x<n)
+	if(x>=0 && x<=n)
 	{
 		return 1;
 	}
@@ -30,11 +30,41 @@ int valid(int x)
 		return 0;
 	}
 }
-int main()
+void Print(int arr[10][10],int n)
 {
 	int value;
-	int sum=0;
+	for(int li=0;li<n;li++)
+	{
+		for(int lj=0;lj<n;lj++)
+		{
+			for(int ui=li;ui<n;ui++)
+			{
+				for(int uj=lj;uj<n;uj++)
+				{
+					value=arr[ui][uj];
+					if(valid(li-1))
+					{
+						value=value-arr[ui-1][uj];
+					}
+					if(valid(lj-1))
+					{
+						value=value-arr[ui][uj-1];
+					}
+					if(valid(li-1)&& valid(lj-1))
+					{
+						value=value+arr[ui-1][uj-1];
+					}
+					// cout<<value<<endl;
+					sum=max(value,sum);
+				}
+			}
+		}
+	}
+}
+int main()
+{
 	cin>>n;
+
 	int arr[10][10];
 	for(int i=0;i<n;i++)
 	{
@@ -43,43 +73,8 @@ int main()
 			cin>>arr[i][j];
 		}
 	}
-	cumalative(arr);
-	for(int i=0;i<n;i++)
-	{
-		for(int j=0;j<n;j++)
-		{
-			cout<<arr[i][j]<<" ";
-		}
-		cout<<endl;
-	}
 
-
-	for(int li=0;li<n;li++)
-	{
-		for(int lj=0;lj<n;lj++)
-		{
-			for(int Bi=li;Bi<n;Bi++)
-			{
-				for(int Bj=lj;Bj<n;Bj++)
-				{
-					 value=0;
-					value=arr[Bi][Bj];
-				   if((valid(li-1)))
-				   {
-				   	value=value-arr[li-1][Bj];
-				   }
-				   if(valid(lj-1))
-				   {
-				   	value=value-arr[Bi][lj-1];
-				   }
-				   if(valid(li-1)&&valid(lj-1))
-				   {
-				   	value=value+arr[li-1][lj-1];
-				   }
-				   sum=sum+value;
-				}
-			}
-		}
-	}
+	Cumul(arr,n);
+	Print(arr,n);	
 	cout<<sum<<endl;
 }
