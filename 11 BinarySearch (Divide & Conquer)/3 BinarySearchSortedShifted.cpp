@@ -24,7 +24,7 @@ int FindMax(int arr[],int n)
 }
 int main()
 {
-	int arr[]={100,101,222,444,999};
+	int arr[]={1000,101,222,444,999};
 	int n=sizeof(arr)/sizeof(arr[0]);
 	 FindMax(arr,n);
 	return 0;
