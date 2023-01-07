@@ -41,21 +41,21 @@
 // 	return 0;
 // }
 
-#include<iostream>
-using namespace std;
-int MULTIPLY(int a,int b)
-{
-	if(b==0){
-	return 0;
-     }
-    else{
-    	return a+MULTIPLY(a,b-1);
-    }
-}
-int main()
-{
-	int a,b;
-	cin>>a>>b;
-	cout<<MULTIPLY(a,b)<<endl;
-	return 0;
-}
+// #include<iostream>
+// using namespace std;
+// int MULTIPLY(int a,int b)
+// {
+// 	if(b==0){
+// 	return 0;
+//      }
+//     else{
+//     	return a+MULTIPLY(a,b-1);
+//     }
+// }
+// int main()
+// {
+// 	int a,b;
+// 	cin>>a>>b;
+// 	cout<<MULTIPLY(a,b)<<endl;
+// 	return 0;
+// }
