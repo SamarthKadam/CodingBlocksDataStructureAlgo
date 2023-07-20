@@ -11,6 +11,7 @@ int main()
 
 	for(int i=0;i<n;i++)
 	{
+		// getline(cin,a[i]);
 		cin.getline(a[i],100);
 	}
 
